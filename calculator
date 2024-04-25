@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscription Plans</title>
+<style>
+    .container {
+        width: 60%;
+        float: left;
+        padding: 20px;
+        padding-bottom: 60px;
+        position: relative; 
+        background-color: hsla(0,0%,93%,.4);
+        border-radius: 20px;    
+        margin: 0 0 3rem;
+    }
+    
+    .right-container {
+        width: 40%;
+        float: right;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .box {
+        border: 2px solid #1DC242;
+        padding-bottom: 100px;
+        border-radius: 25px;
+        text-align: center;        
+    	position: relative;
+    }
+    
+    .header {
+        background: transparent linear-gradient(1deg, #85c137, #12963a) 0 0 no-repeat padding-box;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 20px;
+        padding: 20px 15px 10px;
+        border-radius: 22px 22px 0 0;
+    }
+    
+    .circle {
+    	margin-left: auto;
+    	margin-right: auto;
+        width: 120px;
+        height: 120px;
+        outline: 4px solid #1DC242; 
+        border: 4px solid white;
+        border-radius: 50%;
+        background-color: #FC1049; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+    }
+    
+    #total-price,
+    #per-month {
+        position: absolute;
+        text-align: center;
+        color: white;
+    }
+
+    #total-price {
+        top: 30%;        
+        left: 0;
+        right: 0;
+    }
+
+    #per-month {
+        font-size: 16px;
+        line-height: 1em;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+    }
+    
+    #gb-label,
+    #mins-label,
+    #texts-label {
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: #12963a;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 10px; 
+        border-radius: 5px;
+        background: #FA84A1; 
+        outline: none; 
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #FC1049; /* Slider color */
+    }
+    
+    .line-divider {
+        width: 100%; 
+        height: 2px; 
+        background-color: #C0C1C2;        
+    }
+    
+    #data-label,
+    #voice-label,
+    #sms-label {
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: black;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        position: relative; 
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for centering */
+    }
+
+   /* #data-label {
+        top: 20px; 
+    }
+
+    #voice-label {
+        top: 170px; 
+    }
+
+    #sms-label {
+        top: 320px; 
+    }*/
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <h2>Data</h2>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div id="gb-label">500 MB</div>
+            <span style="font-weight: bold;">R<span id="price">35</span></span>
+        </div>
+        <input type="range" id="data-slider" class="range-slider" value="0" min="0" max="11" step="1" style="width: 100%;">
+        <div style="text-align: center;">
+            <span style="position: absolute; left: 2.5%;">0.5</span>
+            <span style="position: absolute; left: 11.8%;">1</span>
+            <span style="position: absolute; left: 20.4%;">2</span>
+            <span style="position: absolute; left: 28.6%;">3</span>
+            <span style="position: absolute; left: 37%;">5</span>
+            <span style="position: absolute; left: 44.5%;">10</span>
+            <span style="position: absolute; left: 52.68%;">15</span>
+            <span style="position: absolute; left: 61.2%;">20</span>
+            <span style="position: absolute; left: 69.5%;">30</span>
+            <span style="position: absolute; left: 78%;">50</span>
+            <span style="position: absolute; left: 85.5%;">100</span>
+            <span style="position: absolute; left: 94%;">200</span>
+        </div>        
+    </div>
+
+    <div style="margin-top: 50px;">
+    <div class="line-divider"></div>
+        <h2>Voice</h2>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div id="mins-label">50 Mins</div>
+            <span style="font-weight: bold;">R<span id="voice-price">35</span></span>
+        </div>
+        <input type="range" id="mins-slider" class="range-slider" value="0" min="0" max="10" step="1" style="width: 100%;">
+        <div style="text-align: center;">
+            <span style="position: absolute; left: 2.8%;">50</span>
+            <span style="position: absolute; left: 11.3%;">100</span>
+            <span style="position: absolute; left: 20.5%;">150</span>
+            <span style="position: absolute; left: 30%;">200</span>
+            <span style="position: absolute; left: 39%;">300</span>
+            <span style="position: absolute; left: 48%;">400</span>
+            <span style="position: absolute; left: 57.6%;">500</span>
+            <span style="position: absolute; left: 66.5%;">600</span>
+            <span style="position: absolute; left: 76%;">800</span>
+            <span style="position: absolute; left: 84%;">1000</span>
+            <span style="position: absolute; left: 93.6%;">2000</span>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px;">
+    <div class="line-divider"></div>
+        <h2>SMS</h2>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div id="texts-label">50 Texts</div>
+            <span style="font-weight: bold;">R<span id="sms-price">0</span></span>
+        </div>
+        <input type="range" id="texts-slider" class="range-slider" value="0" min="0" max="8" step="1" style="width: 100%;">
+        <div style="text-align: center;">
+            <span style="position: absolute; left: 2.8%;">50</span>
+            <span style="position: absolute; left: 13.6%;">100</span>
+            <span style="position: absolute; left: 25%;">150</span>
+            <span style="position: absolute; left: 36.7%;">200</span>
+            <span style="position: absolute; left: 48%;">300</span>
+            <span style="position: absolute; left: 59.5%;">400</span>
+            <span style="position: absolute; left: 71%;">500</span>
+            <span style="position: absolute; left: 82%;">1000</span>
+            <span style="position: absolute; left: 93.4%;">2000</span>
+        </div>
+    </div>
+</div>
+
+<div class="right-container">
+    <div class="box">
+      <div class="header">Your new plan</div>
+      <div class="circle" id="total-price-container">
+          <span id="total-price">R999</span>
+          <span id="per-month">per month</span>
+      </div>
+      <div id="data-label">Data <span id="data-amount">500 MB</span></div>
+      <div id="voice-label">Voice <span id="voice-amount">50 Mins</span></div>
+      <div id="sms-label">SMS <span id="sms-amount">50 Texts</span></div>
+      <div style="text-align: center; margin-top: 10px;"></div>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dataSlider = document.getElementById('data-slider');
+    const gbLabel = document.getElementById('gb-label');
+    const priceSpan = document.getElementById('price');
+
+    const voiceSlider = document.getElementById('mins-slider');
+    const voiceLabel = document.getElementById('mins-label');
+    const voicePriceSpan = document.getElementById('voice-price');
+
+    const smsSlider = document.getElementById('texts-slider');
+    const smsLabel = document.getElementById('texts-label');
+    const smsPriceSpan = document.getElementById('sms-price');
+
+    const totalPriceSpan = document.getElementById('total-price');
+
+    const dataPrices = [40, 55, 85, 109, 149, 199, 259, 299, 379, 499, 699, 899];
+    const voicePrices = [35, 60, 85, 110, 160, 200, 240, 280, 370, 430, 800];
+    const smsPrices = [0, 25, 30, 40, 60, 80, 100, 200, 400];
+    
+    const dataAmountSpan = document.getElementById('data-amount');
+    const voiceAmountSpan = document.getElementById('voice-amount');
+    const smsAmountSpan = document.getElementById('sms-amount');
+    
+    function updateDataAmount() {
+        const index = parseInt(dataSlider.value);
+        dataAmountSpan.textContent = index === 0 ? '500 MB' : index + ' GB';
+    }
+
+    function updateVoiceAmount() {
+        const index = parseInt(voiceSlider.value);
+        voiceAmountSpan.textContent = index === 0 ? '50 Mins' : index * 100 + ' Mins';
+    }
+
+    function updateSMSAmount() {
+        const index = parseInt(smsSlider.value);
+        const smsTexts = [50, 100, 150, 200, 300, 400, 500, 1000, 2000];
+        smsAmountSpan.textContent = smsTexts[index] + ' Texts';
+    }
+
+    dataSlider.addEventListener('input', function() {
+        updateDataAmount();
+        calculateTotalPrice();
+    });
+
+    voiceSlider.addEventListener('input', function() {
+        updateVoiceAmount();
+        calculateTotalPrice();
+    });
+
+    smsSlider.addEventListener('input', function() {
+        updateSMSAmount();
+        calculateTotalPrice();
+    });
+
+    // Initial update of amount labels
+    updateDataAmount();
+    updateVoiceAmount();
+    updateSMSAmount();
+
+    function calculateTotalPrice() {
+        const dataIndex = parseInt(dataSlider.value);
+        const voiceIndex = parseInt(voiceSlider.value);
+        const smsIndex = parseInt(smsSlider.value);
+
+        const dataPrice = dataPrices[dataIndex];
+        const voicePrice = voicePrices[voiceIndex];
+        const smsPrice = smsPrices[smsIndex];
+
+        const totalPrice = dataPrice + voicePrice + smsPrice;
+        totalPriceSpan.textContent = "R" + totalPrice;
+    }
+
+    dataSlider.addEventListener('input', function() {
+        const index = parseInt(dataSlider.value);
+        gbLabel.textContent = index === 0 ? '500 MB' : index + ' GB';
+        priceSpan.textContent = dataPrices[index];
+        calculateTotalPrice();
+    });
+
+    voiceSlider.addEventListener('input', function() {
+        const index = parseInt(voiceSlider.value);
+        voiceLabel.textContent = index === 0 ? '50 mins' : index * 100 + ' mins';
+        voicePriceSpan.textContent = voicePrices[index];
+        calculateTotalPrice();
+    });
+
+    smsSlider.addEventListener('input', function() {
+        const index = parseInt(smsSlider.value);
+        const smsTexts = [50, 100, 150, 200, 300, 400, 500, 1000, 2000];
+        smsLabel.textContent = smsTexts[index] + ' Texts';
+        smsPriceSpan.textContent = smsPrices[index];
+        calculateTotalPrice();
+    });
+
+    calculateTotalPrice();
+
+    // Update slider track color based on slider value
+    function updateSliderTrackColor(slider) {
+        const value = parseFloat(slider.value);
+        const percentage = (value / parseFloat(slider.max)) * 100;
+
+        const colorLeft = "#FC1049";
+        const colorRight = "#FA84A1";
+
+        const gradient = `linear-gradient(to right, ${colorLeft} 0%, ${colorLeft} ${percentage}%, ${colorRight} ${percentage}%, ${colorRight} 100%)`;
+
+        slider.style.background = gradient;
+    }
+
+    dataSlider.addEventListener('input', function() {
+        updateSliderTrackColor(dataSlider);
+    });
+
+    voiceSlider.addEventListener('input', function() {
+        updateSliderTrackColor(voiceSlider);
+    });
+
+    smsSlider.addEventListener('input', function() {
+        updateSliderTrackColor(smsSlider);
+    });
+
+});
+</script>
+
+</body>
+</html>
